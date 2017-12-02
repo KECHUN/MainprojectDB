@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PhpInterpreters">
+    <interpreters>
+      <interpreter home="ssh://y_kechun@login.encs.concordia.ca:22/usr/local/bin/php" id="7cbaf2a3-0ac1-49ab-a014-a8b7a89c383a" name="Remote PHP" debugger_id="php.debugger.XDebug">
+        <remote_data HOST="login.encs.concordia.ca" PORT="22" USERNAME="y_kechun" PRIVATE_KEY_FILE="" MY_KNOWN_HOSTS_FILE="" USE_KEY_PAIR="false" USE_AUTH_AGENT="false" INTERPRETER_PATH="/usr/local/bin/php" HELPERS_PATH="" INITIALIZED="false" VALID="true" />
+      </interpreter>
+    </interpreters>
+  </component>
+  <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />
+</project>
