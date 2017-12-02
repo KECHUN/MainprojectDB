@@ -18,9 +18,8 @@ mysqli_select_db($dbc,$dbname);
 $query = "SELECT * FROM Ad WHERE user_name = '".$_SESSION['user']."' ";
 $result = mysqli_query($dbc,$query);
 
-echo ' 
-
-		<table>
+if($result) {
+    echo '<table>
 		<tr>
 		<th>Title</th>
 		<th>Category</th>
@@ -34,16 +33,15 @@ echo '
 		<th>Image 4</th>
 		<th></th>
 		</tr> ';
-
-if($result) {
+    
     while($row = mysqli_fetch_array($result)){
-echo ' <tr>
-		<td>'.$row["title"].'</td>
-		<td>'.$row["category"].'</td>
-		<td>'.$row["subCategory"].'</td>
-		<td>'.$row["endDate"].'</td>
-		<td>'.$row["price"].'</td>
-		<td>'.$row["description"].'</td>
+        echo ' <tr>
+		<td>'.html_entity_decode($row["title"]).'</td>
+		<td>'.html_entity_decode($row["category"]).'</td>
+		<td>'.html_entity_decode($row["subCategory"]).'</td>
+		<td>'.html_entity_decode($row["endDate"]).'</td>
+		<td>'.html_entity_decode($row["price"]).'</td>
+		<td>'.html_entity_decode($row["description"]).'</td>
 		<td><img src="'.$row["image1"].'" height="250" width="250"></td>
 		<td><img src="'.$row["image2"].'" height="250" width="250"></td>
 		<td><img src="'.$row["image3"].'" height="250" width="250"></td>
@@ -51,10 +49,12 @@ echo ' <tr>
 		<td><a href = "editAd.php?varname='.$row["adID"].'">Edit</a></td>
 	<tr>';
     }
+    echo ' </table>';
 }
 else {
     print "Database NOT Found ";
     mysqli_close($dbc,$db_handle);
 }
-echo ' </table>';
 ?>
+
+<a href="welcome.php">Return to your account</a>

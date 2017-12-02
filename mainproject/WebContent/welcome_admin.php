@@ -23,7 +23,7 @@ ob_start();
 				<li class="active">
 					<a href="search.html">Search</a>
 				</li>
-				<form action="buckup.php" method="post">
+				<form action="backup.php" method="post">
 				<li>
 					<button class="btn btn-primary" type="submit">Transfer today transactions</button>
 				</li>

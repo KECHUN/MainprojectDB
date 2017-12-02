@@ -65,22 +65,32 @@ if($result) {
          $lastName = $row["last_name"];
          $email = $row["email"];
          $phone = $row["phone"];
+         $balance = $row["balance"];
     }
 }
 else {
     print "Database NOT Found ";
-    mysqli_close($dbc,$db_handle);
+    mysqli_close($dbc);
 }
-        echo 'First Name: ' . $firstName.'<br>';
+    echo 'First Name: ' . $firstName.'<br>';
 	echo 'Last Name: '  . $lastName.'<br>';
 	echo 'Email address: ' . $email.'<br>';
 	echo 'Phone number: ' . $phone. '<br>';
-	echo 'Membership: ' . $membership.'<br>';
+	echo 'Membership: ' . $membership.'  <a href="membership.php">Change membership</a><br>';
+	echo 'Balance: '.$balance.'<br>';
+	
+/*	$query = "SELECT * FROM AllAds ";
+	$result = mysqli_query($dbc,$query);
+	if($result) {
+	    echo 'view queried';
+	} else {
+	    print "Database NOT Found ";
+	    mysqli_close($dbc);
+	};*/
 ?>
-<a href="membership.php">Change membership</a>
-<a href="viewOwnAds.php">View, edit and delete ads</a>
-<a href="postAds.php">Post an ad</a>
-<a href="search.php">Search for an ad</a>
+<a href="viewOwnAds.php">View, edit and delete ads</a><br>
+<a href="postAds.html">Post an ad</a><br>
+<a href="search.php">Search for an ad</a><br>
 
 
 	<div id="footer">

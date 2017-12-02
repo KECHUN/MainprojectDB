@@ -18,7 +18,7 @@ $category= $_POST["category"];
 
 $dbc = mysqli_connect($hostname,$username, $password,$dbname) OR DIE ('Unable to connect to database! Please try again later.');
 mysqli_select_db($dbc,$dbname);
-$query = "SELECT * FROM Ad WHERE  =  ";
+$query = "SELECT * FROM AllAds WHERE province = '$province' AND city = '$city' AND category = '$category'";//WHERE  province = '$province' AND city = '$city' AND category = '$category'
 $result = mysqli_query($dbc,$query);
 
 echo ' 
@@ -43,7 +43,7 @@ if($result) {
 echo ' <tr>
 		<td>'.$row["title"].'</td>
 		<td>'.$row["category"].'</td>
-		<td>'.$row["subCategory"].'</td>
+		<td>'.$row["subcategory"].'</td>
 		<td>'.$row["endDate"].'</td>
 		<td>'.$row["price"].'</td>
 		<td>'.$row["description"].'</td>
